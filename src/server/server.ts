@@ -8,6 +8,7 @@ import { diagnostic } from "./methods/textDocument/diagnostic";
 import { didChange } from "./methods/textDocument/didChange";
 import { didOpen } from "./methods/textDocument/didOpen";
 import { hover } from "./methods/textDocument/hover";
+import { syntaxHighlight } from "./methods/textDocument/highlight";
 
 interface Message {
   jsonrpc: string;
@@ -29,7 +30,8 @@ type RequestMethod = (
   | ReturnType<typeof completion>
   | ReturnType<typeof codeAction>
   | ReturnType<typeof diagnostic>
-  | ReturnType<typeof hover>;
+  | ReturnType<typeof hover>
+  | ReturnType<typeof syntaxHighlight>;
 
 type NotificationMethod = (message: NotificationMessage) => void;
 
@@ -37,7 +39,8 @@ const methodLookup: Record<string, RequestMethod | NotificationMethod> = {
   exit,
   initialize,
   // shutdown,
-  // "textDocument/completion": completion,
+  "textDocument/completion": completion,
+  "textDocument/semanticTokens": syntaxHighlight,
   // "textDocument/didChange": didChange,
   // "textDocument/didOpen": didOpen,
   // "textDocument/diagnostic": diagnostic,
