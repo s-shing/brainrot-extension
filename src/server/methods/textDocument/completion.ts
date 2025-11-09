@@ -3,8 +3,10 @@ import { documents, TextDocumentIdentifier } from "../../documents";
 import log from "../../log";
 import * as fs from "fs";
 import { Position } from "../../types";
-import { ElevenLabsClient } from '@elevenlabs/elevenlabs-js';
-import 'dotenv/config'
+import dotenv from 'dotenv';
+import path from "path";
+dotenv.config({path: path.resolve(__dirname, '../../../../.env')} );
+
 
 
 const MAX_LENGTH = 1000;
@@ -35,7 +37,6 @@ export const completion = (message: RequestMessage): CompletionList | null => {
   for (let i: number = 0; i < words.length; i++) {
     itemList.push({label: words[i]})
   }
-  log.write("here"+process.env.eleven_API);
 
 
   return {

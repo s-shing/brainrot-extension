@@ -2,25 +2,27 @@ import * as vscode from 'vscode';
 import {Compile} from "./python";
 import { init_client_server } from './server/startServer';
 
+
 let vidDict = {"oversensory":"7568990861531385143", "peachyslime":"7570402732197137677","nocopyrightgameplay2":"7467001786117672214","familyguy.v01":"7570028390435179779"}
 
 export async function activate(context: vscode.ExtensionContext) {
+
 	console.log('Congratulations, your extension "brainrot-extension" is now active!');
-	// vscode.commands.registerCommand('brainrot.tiktok', () => {
-		
-	// })
+
+
 	init_client_server();
 
 	let runCommand = vscode.commands.registerCommand('brainrot.compile', () => {
 		const editor = vscode.window.activeTextEditor;
-		console.log(Compile(editor?.document.fileName as string));
+		Compile(editor?.document.fileName as string);
 	})
+
 	tiktokPopout();
 
-	
 
 
 }
+
 async function tiktokPopout(){
 	let panel = vscode.window.createWebviewPanel('tiktok', 'Tiktok Brainrot', vscode.ViewColumn.Beside,{enableScripts: true}) 
 	while(true){

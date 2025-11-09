@@ -1,5 +1,5 @@
 #include "brainrot.h"
 
 fuckItWeBall(
-    yap("HelloWorld");
+    yap("HelloWorld"); 
 ) 
