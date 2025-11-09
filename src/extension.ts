@@ -23,10 +23,11 @@ export async function activate(context: vscode.ExtensionContext) {
 }
 async function tiktokPopout(){
 	let panel = vscode.window.createWebviewPanel('tiktok', 'Tiktok Brainrot', vscode.ViewColumn.Beside,{enableScripts: true}) 
+	while(true){
 	for (const [key, value] of Object.entries(vidDict)) {	
 		panel.webview.html = getWebviewContent(key,value);
 		await delay(15000);
-	}
+	}}
 }
 
 function delay(ms: number) {
