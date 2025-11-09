@@ -1,6 +1,9 @@
 #include <stdio.h>
 #include <stdbool.h>
 
+// Keywords
+# define gyatt struct
+
 // Constants
 # define no !
 # define cap false
@@ -12,12 +15,12 @@
 // Basic operations
 # define lore(type, var, val) type var = val
 # define yap(x) printf(x)
-# define yap_int(var) printf("%d\n", var)
-# define six_seven(var, inc) var += inc
+# define yapInt(var) printf("%d\n", var)
+# define sixSeven(var, inc) var += inc
 # define sigma(var, val) var == val
 # define alpha(var, val) var > val
 # define beta(var, val) var < val
-# define crash_out(x) return x
+# define crashOut(x) return x
 # define tweak return
 
 // Functions and Environments
