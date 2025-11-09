@@ -1,5 +1,6 @@
 import * as vscode from 'vscode';
 import {Compile} from "./python";
+import { init_client_server } from './server/startServer';
 
 let vidDict = {"oversensory":"7568990861531385143", "peachyslime":"7570402732197137677","nocopyrightgameplay2":"7467001786117672214","familyguy.v01":"7570028390435179779"}
 
@@ -19,6 +20,8 @@ for (const [key, value] of Object.entries(vidDict)) {
 	await delay(15000);
 
 };
+
+	init_client_server();
 
 
 }
