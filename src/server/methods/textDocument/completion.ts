@@ -3,8 +3,8 @@ import { documents, TextDocumentIdentifier } from "../../documents";
 import log from "../../log";
 import * as fs from "fs";
 import { Position } from "../../types";
-import { ElevenLabsClient } from '@elevenlabs/elevenlabs-js';
-import 'dotenv/config'
+// import { ElevenLabsClient } from '@elevenlabs/elevenlabs-js';
+// import 'dotenv/config'
 
 
 const MAX_LENGTH = 1000;

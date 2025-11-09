@@ -14,6 +14,15 @@
   ],
   "main": "./out/extension.js",
   "contributes": {
+    "languages": [
+            {
+                "id": "brainrot",
+                "extensions": [
+                    ".br"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
     "commands": [
       {
         "command": "brainrot.compile",
@@ -29,7 +38,14 @@
           "group": "navigation"
         }
       ]
-    }
+    },
+    "grammars": [
+            {
+                "language": "brainrot",
+                "scopeName": "source.brainrot",
+                "path": "./src/server/methods/textDocument/highlight.json"
+            }
+        ]
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",

@@ -9,7 +9,7 @@ export async function activate(context: vscode.ExtensionContext) {
 	// vscode.commands.registerCommand('brainrot.tiktok', () => {
 		
 	// })
-	init_client_server();
+	init_client_server(context);
 
 	let runCommand = vscode.commands.registerCommand('brainrot.compile', () => {
 		const editor = vscode.window.activeTextEditor;
@@ -28,6 +28,7 @@ async function tiktokPopout(){
 		await delay(15000);
 	}
 }
+
 
 function delay(ms: number) {
     return new Promise( resolve => setTimeout(resolve, ms) );
