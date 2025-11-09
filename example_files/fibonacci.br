@@ -6,7 +6,7 @@ rizz(
         sus(
             beta(x, 2),
             { crashOut(1); },
-            { DEAD }
+            { }
         );
         lore(int, r, 0);
         sixSeven(r, rizzler(x-1));
@@ -29,6 +29,8 @@ fuckItWeBall(
     sus(
         no cap,
         yap("true");,
-        DEAD
+        dead
     )
+
+
 )

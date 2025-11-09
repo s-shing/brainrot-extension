@@ -8,6 +8,10 @@ skibidi "lifeLib.c"
 lore(int, currentGridIdx, 0);
 lore(int, genNum, 0);
 
+
+lore(char aura aura, grid1, NULL);
+lore(char aura aura, grid2, NULL);
+
 rizz(
     void,
     printGrid,
@@ -32,12 +36,106 @@ rizz(
     }
 )
 
+int pos[8][2] = {{-1,-1},{-1,0},{-1,1},{0,-1},{0,1},{1,1},{1,0},{1,-1}};
+
+rizz(
+    int,
+    tick,
+    (),
+    {
+        lore(int, current, currentGridIdx);
+        lore(int, next, (current+1)%2);
+        lore(char aura aura, temp, NULL);
+        lore(char aura aura, temp2, NULL);
+        
+        sus(
+            sigma(current,1),
+            {
+                temp = grid2;
+                temp2 = grid1;
+            },
+            {
+                temp = grid1;
+                temp2 = grid2;
+            }
+        );
+
+        serving(
+            lore(int, i, 0),
+            beta(i, GRIDY),
+            sixSeven(i, 1),
+            {
+                serving(
+                    lore(int, j, 0),
+                    beta(j, GRIDX),
+                    sixSeven(j, 1),
+                    {
+                        lore(int, liveNum, 0);
+                        serving(
+                            lore(int, z, 0),
+                            beta(z, 8),
+                            sixSeven(z, 1),
+                            {
+                                lore(int, y, i + pos[z][0]);
+                                lore(int, x, j + pos[z][1]);
+
+                                sus(
+                                    beta(y, 0) || alpha(y, GRIDY-1) || beta(x, 0) || alpha(x, GRIDX-1),
+                                    { },
+                                    {
+                                        sus(
+                                            sigma(temp[y][x], LIVE),
+                                            {
+                                                sixSeven(liveNum, 1);
+                                            },
+                                            { }
+                                        );
+                                    }
+                                );
+                            }
+                        );
+                        
+                        sus(
+                            sigma(temp[i][j], LIVE),
+                            {
+                                sus(
+                                    beta(liveNum, 2) || alpha(liveNum, 3),
+                                    {
+                                        temp2[i][j] = DEAD;
+                                    },
+                                    {
+                                        temp2[i][j] = LIVE;
+                                    }
+                                )
+                            },
+                            {
+                                sus(
+                                    sigma(liveNum, 3),
+                                    {
+                                        temp2[i][j] = LIVE;
+                                    },
+                                    {
+                                        temp2[i][j] = DEAD;
+                                    }
+                                )
+                            }
+                        );
+                    }
+                );
+            }
+        );
+    
+        crashOut(next);
+    };
+
+)
+
 fuckItWeBall(
     lore(char aura, fileName, "pulsar.rle");
-    lore(char aura aura, grid1, parse_life(fileName));
-    lore(char aura aura, grid2, parse_life(fileName));
+    grid1 = parse_life(fileName);
+    grid2 = parse_life(fileName);
     stan(
-        beta(genNum, 100),
+        beta(genNum, 10),
         {
             sus(
                 sigma(currentGridIdx, 0),
@@ -47,14 +145,11 @@ fuckItWeBall(
                 {
                     printGrid(grid2);
                 }
-                usleep(300000);
             );
-
-            sus(
-                currentGridIdx,
-                sixSeven(currentGridIdx, -1);,
-                sixSeven(currentGridIdx, 1);
-            );
+            
+            usleep(300000);
+            
+            currentGridIdx = tick();
             sixSeven(genNum, 1);
         }
     );

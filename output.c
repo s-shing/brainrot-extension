@@ -1,74 +1,38 @@
 #include "brainrot.h"
 
-#include <stdio.h>
-#include <stdbool.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <string.h>
-#include "lifeLib.c"
-
-lore(int, currentGridIdx, 0);
-lore(int, genNum, 0);
-
 rizz(
-    void,
-    printGrid,
-    (char aura aura grid),
+    int,
+    rizzler,
+    (int x),
     {
-        serving(
-            lore(int, i, 0),
-            beta(i, GRIDY),
-            sixSeven(i, 1),
-            {
-                serving(
-                    lore(int, j, 0),
-                    beta(j, GRIDX),
-                    sixSeven(j, 1),
-                    {
-                        putchar(grid[i][j]);
-                    }
-                );
-                putchar('\n');
-            }
-        )
+        sus(
+            beta(x, 2),
+            { crashOut(1); },
+            { dead }
+        );
+        lore(int, r, 0);
+        sixSeven(r, rizzler(x-1));
+        sixSeven(r, rizzler(x-2));
+        crashOut(r);
     }
 )
 
 fuckItWeBall(
-    lore(char aura, fileName, "pulsar.rle");
-    lore(char aura aura, grid1, parse_life(fileName));
-    lore(char aura aura, grid2, parse_life(fileName));
-    stan(
-        beta(genNum, 100),
+    lore(int, num_runs, 10);
+    yap("Hello World\n");
+    serving(
+        lore(int, i, 0),
+        beta(i, num_runs),
+        sixSeven(i, 1),
         {
-            sus(
-                sigma(currentGridIdx, 0),
-                {
-                    printGrid(grid1);
-                },
-                {
-                    printGrid(grid2);
-                }
-                usleep(300000);
-            );
-
-            sus(
-                currentGridIdx,
-                sixSeven(currentGridIdx, -1);,
-                sixSeven(currentGridIdx, 1);
-            );
-            sixSeven(genNum, 1);
+            yapInt(rizzler(i));
         }
-    );
-
+    )
     sus(
-        sigma(currentGridIdx, 0),
-        {
-            printGrid(grid1);
-        },
-        {
-            printGrid(grid2);
-        }
-    );
+        no cap,
+        yap("true");,
+        dead
+    )
+
 
 )
