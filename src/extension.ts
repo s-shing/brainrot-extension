@@ -1,71 +1,42 @@
 import * as vscode from 'vscode';
 import {Compile} from "./python";
 
-export async function activate(context: vscode.ExtensionContext) {
+let vidDict = {"oversensory":"7568990861531385143", "peachyslime":"7570402732197137677","nocopyrightgameplay2":"7467001786117672214","familyguy.v01":"7570028390435179779"}
 
+export async function activate(context: vscode.ExtensionContext) {
+  	let panel: vscode.WebviewPanel | undefined = undefined;	
 	console.log('Congratulations, your extension "brainrot-extension" is now active!');
-	vscode.commands.registerCommand('brainrot.youtube', () => {
-		const panel = vscode.window.createWebviewPanel('youtube', 'Youtube Brainrot', vscode.ViewColumn.One,{enableScripts: true}) 
-		panel.webview.html = getWebviewContent();
-	})
+	// vscode.commands.registerCommand('brainrot.tiktok', () => {
+		
+	// })
 	let runCommand = vscode.commands.registerCommand('brainrot.compile', () => {
 		const editor = vscode.window.activeTextEditor;
 		Compile(editor?.document.fileName as string);
 	})
+	if (panel){
+		panel.reveal(vscode.window.activeTextEditor);
+	} else{
+	 panel = vscode.window.createWebviewPanel('tiktok', 'Tiktok Brainrot', vscode.ViewColumn.Beside,{enableScripts: true}) 
+for (const [key, value] of Object.entries(vidDict)) {	
+	 panel.webview.html = getWebviewContent(key,value);
+	await delay(15000);
+
+}};
 
 
 }
-function getWebviewContent(){
-	
-return ` <iframe id="existing-iframe-example"
-        width="640" height="360"
-        src="https://www.youtube.com/embed/M7lc1UVf-VE?enablejsapi=1"
-        frameborder="0"
-        style="border: solid 4px #37474F"
-></iframe>
-
-<script type="text/javascript">
-  var tag = document.createElement('script');
-  tag.id = 'iframe-demo';
-  tag.src = 'https://www.youtube.com/iframe_api';
-  var firstScriptTag = document.getElementsByTagName('script')[0];
-  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-  var player;
-  function onYouTubeIframeAPIReady() {
-    player = new YT.Player('existing-iframe-example', {
-        events: {
-          'onReady': onPlayerReady,
-          'onStateChange': onPlayerStateChange
-        }
-    });
-  }
-  function onPlayerReady(event) {
-    document.getElementById('existing-iframe-example').style.borderColor = '#FF6D00';
-  }
-  function changeBorderColor(playerStatus) {
-    var color;
-    if (playerStatus == -1) {
-      color = "#37474F"; // unstarted = gray
-    } else if (playerStatus == 0) {
-      color = "#FFFF00"; // ended = yellow
-    } else if (playerStatus == 1) {
-      color = "#33691E"; // playing = green
-    } else if (playerStatus == 2) {
-      color = "#DD2C00"; // paused = red
-    } else if (playerStatus == 3) {
-      color = "#AA00FF"; // buffering = purple
-    } else if (playerStatus == 5) {
-      color = "#FF6DOO"; // video cued = orange
-    }
-    if (color) {
-      document.getElementById('existing-iframe-example').style.borderColor = color;
-    }
-  }
-  function onPlayerStateChange(event) {
-    changeBorderColor(event.data);
-  }
-</script>`
+function delay(ms: number) {
+    return new Promise( resolve => setTimeout(resolve, ms) );
+}
+function getWebviewContent(username:string, vidId:string){
+	return `<blockquote 
+				class="tiktok-embed" 
+				data-video-id="${vidId}" 
+				style="max-width: 320px; max-height:600px;" 
+			>
+				<section></section>
+			</blockquote>
+			<script async src="https://www.tiktok.com/embed.js"></script>`
 }
 
 // This method is called when your extension is deactivated
