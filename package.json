@@ -42,7 +42,10 @@
     "eslint": "^9.36.0",
     "typescript": "^5.9.3",
     "@vscode/test-cli": "^0.0.11",
-    "@vscode/test-electron": "^2.5.2"
+    "@vscode/test-electron": "^2.5.2",
+    "@elevenlabs/elevenlabs-js": "latest",
+    "dotenv": "latest",
+    "@types/ws":"latest"
   },
   "dependencies": {
     "vscode-languageclient": "^7.0.0"
