@@ -9,22 +9,28 @@
   "categories": [
     "Other"
   ],
-"activationEvents": [  "*"],
+  "activationEvents": [
+    "*"
+  ],
   "main": "./out/extension.js",
   "contributes": {
-    "commands": [{
-      "command": "brainrot.compile",
-      "title": "Run",
-       "icon": "$(play)"  
-       }],
- 
-  "menus": {
-      "editor/title/run": [{
+    "commands": [
+      {
         "command": "brainrot.compile",
-        "when": "resourceExtname == .br",
-        "group": "navigation"
-      }]
-    }}, 
+        "title": "Run",
+        "icon": "$(play)"
+      }
+    ],
+    "menus": {
+      "editor/title/run": [
+        {
+          "command": "brainrot.compile",
+          "when": "resourceExtname == .br",
+          "group": "navigation"
+        }
+      ]
+    }
+  },
   "scripts": {
     "vscode:prepublish": "npm run compile",
     "compile": "tsc -p ./",
@@ -34,21 +40,20 @@
     "test": "vscode-test"
   },
   "devDependencies": {
-    "@types/vscode": "^1.105.0",
+    "@elevenlabs/elevenlabs-js": "latest",
     "@types/mocha": "^10.0.10",
     "@types/node": "22.x",
+    "@types/vscode": "^1.105.0",
+    "@types/ws": "latest",
     "@typescript-eslint/eslint-plugin": "^8.45.0",
     "@typescript-eslint/parser": "^8.45.0",
-    "eslint": "^9.36.0",
-    "typescript": "^5.9.3",
     "@vscode/test-cli": "^0.0.11",
     "@vscode/test-electron": "^2.5.2",
-    "@elevenlabs/elevenlabs-js": "latest",
-    "dotenv": "latest",
-    "@types/ws":"latest"
+    "dotenv": "^17.2.3",
+    "eslint": "^9.36.0",
+    "typescript": "^5.9.3"
   },
   "dependencies": {
     "vscode-languageclient": "^7.0.0"
   }
 }
-

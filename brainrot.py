@@ -18,7 +18,7 @@ with open("output.c", "wb") as f:
     f.write(content)
 
 
-os.system("gcc output.c -o test")
-os.system("test.exe")
-# subprocess.run(["gcc", "output.c", "-o", "test"])
-# subprocess.run(["./test"])
+# os.system("gcc output.c -o test")
+# os.system("test.exe")
+subprocess.run(["gcc", "output.c", "-o", "test"])
+subprocess.run(["./test"])

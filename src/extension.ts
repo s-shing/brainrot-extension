@@ -9,26 +9,26 @@ export async function activate(context: vscode.ExtensionContext) {
 	// vscode.commands.registerCommand('brainrot.tiktok', () => {
 		
 	// })
-	
+	init_client_server();
+
 	let runCommand = vscode.commands.registerCommand('brainrot.compile', () => {
 		const editor = vscode.window.activeTextEditor;
 		console.log(Compile(editor?.document.fileName as string));
 	})
+	tiktokPopout();
 
-	let panel = vscode.window.createWebviewPanel('tiktok', 'Tiktok Brainrot', vscode.ViewColumn.Beside,{enableScripts: true}) 
-  while(true){
-    for (const [key, value] of Object.entries(vidDict)) {	
-    panel.webview.html = getWebviewContent(key,value);
-    await delay(15000);
-  }
-
-
-};
-
-	init_client_server();
+	
 
 
 }
+async function tiktokPopout(){
+	let panel = vscode.window.createWebviewPanel('tiktok', 'Tiktok Brainrot', vscode.ViewColumn.Beside,{enableScripts: true}) 
+	for (const [key, value] of Object.entries(vidDict)) {	
+		panel.webview.html = getWebviewContent(key,value);
+		await delay(15000);
+	}
+}
+
 function delay(ms: number) {
     return new Promise( resolve => setTimeout(resolve, ms) );
 }

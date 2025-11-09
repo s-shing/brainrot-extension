@@ -7,7 +7,6 @@ import { ElevenLabsClient } from '@elevenlabs/elevenlabs-js';
 import 'dotenv/config'
 
 
-
 const MAX_LENGTH = 1000;
 
 const words = fs.readFileSync(__dirname.replace("\\out", "\\src") + "\\dictionary.txt").toString().split("\r\n");
