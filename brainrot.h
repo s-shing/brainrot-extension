@@ -7,7 +7,7 @@
 // Constants
 # define no !
 # define cap false
-# define DEAD 
+# define dead 
 # define aura *
 # define glaze &
 
@@ -27,7 +27,7 @@
 # define fuckItWeBall(body) int main(int argc, char** argv) { body }
 # define sus(cond, body, otherwise) if( cond ) { body } else { otherwise }
 # define serving(init, cond, inc, body) for( init ; cond ; inc ) { body }
-# define stan(cond, body) serving(DEAD; cond; DEAD) { body }
+# define stan(cond, body) while(cond) { body }
 # define rizz(type, name, args, body) type name args { body }
 
 

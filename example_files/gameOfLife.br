@@ -60,13 +60,13 @@ fuckItWeBall(
     );
 
     sus(
-                sigma(currentGridIdx, 0),
-                {
-                    printGrid(grid1);
-                },
-                {
-                    printGrid(grid2);
-                }
-            );
+        sigma(currentGridIdx, 0),
+        {
+            printGrid(grid1);
+        },
+        {
+            printGrid(grid2);
+        }
+    );
 
 )

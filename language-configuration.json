@@ -2,7 +2,7 @@
     // Describes how comments for a language work.
     "comments": {
         // The block comment character pair, like /* block comment */
-        "lineComment": "--",
+        "lineComment": "//",
         // The line comment token, like // this is a comment
         "blockComment": [ "/*", "*/" ]
     },

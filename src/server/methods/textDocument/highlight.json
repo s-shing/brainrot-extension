@@ -25,7 +25,7 @@
 		"entities": {
 			"patterns": [
 				{
-					"match": "^\\s*(fuckItWeBall)\\s*",
+					"match": "^\\s*(fuckItWeBall|skibidi)\\s*",
 					"captures":{
 						"1": { "name": "keyword.other.euphoria" },
 						"2": { "name": "entity.name.section" }
@@ -55,7 +55,7 @@
 			"patterns": [
 				{
 					"name": "keyword.control.euphoria",
-					"match": "(gyatt|no|cap|DEAD|aura|glaze)"
+					"match": "(gyatt|no|cap|dead|aura|glaze)"
 				},
 				{
 					"name": "keyword.operator.euphoria",

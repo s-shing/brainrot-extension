@@ -2,10 +2,11 @@ import subprocess
 import sys, os
 
 content = b""
-replacements = [(b"\xf0\x9f\x92\x80", b"DEAD"),
+replacements = [(b"\xf0\x9f\x92\x80", b"dead"),
                 (b"\xf0\x9f\x98\xad", b"SOB"),
                 (b"\xf0\x9f\x92\x94", b"BROKEN"),
-                (b"\xf0\x9f\xa5\x80", b"WILT")]
+                (b"\xf0\x9f\xa5\x80", b"WILT"),
+                (b"skibidi", b"#include")]
 
 with open(sys.argv[1], "rb") as f:
     content = f.read()

@@ -1,5 +1,74 @@
 #include "brainrot.h"
 
+#include <stdio.h>
+#include <stdbool.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <string.h>
+#include "lifeLib.c"
+
+lore(int, currentGridIdx, 0);
+lore(int, genNum, 0);
+
+rizz(
+    void,
+    printGrid,
+    (char aura aura grid),
+    {
+        serving(
+            lore(int, i, 0),
+            beta(i, GRIDY),
+            sixSeven(i, 1),
+            {
+                serving(
+                    lore(int, j, 0),
+                    beta(j, GRIDX),
+                    sixSeven(j, 1),
+                    {
+                        putchar(grid[i][j]);
+                    }
+                );
+                putchar('\n');
+            }
+        )
+    }
+)
+
 fuckItWeBall(
-    yap("HelloWorld"); 
-) 
+    lore(char aura, fileName, "pulsar.rle");
+    lore(char aura aura, grid1, parse_life(fileName));
+    lore(char aura aura, grid2, parse_life(fileName));
+    stan(
+        beta(genNum, 100),
+        {
+            sus(
+                sigma(currentGridIdx, 0),
+                {
+                    printGrid(grid1);
+                },
+                {
+                    printGrid(grid2);
+                }
+                usleep(300000);
+            );
+
+            sus(
+                currentGridIdx,
+                sixSeven(currentGridIdx, -1);,
+                sixSeven(currentGridIdx, 1);
+            );
+            sixSeven(genNum, 1);
+        }
+    );
+
+    sus(
+        sigma(currentGridIdx, 0),
+        {
+            printGrid(grid1);
+        },
+        {
+            printGrid(grid2);
+        }
+    );
+
+)
