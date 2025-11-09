@@ -1,0 +1,19 @@
+#include "brainrot.h"
+
+fuck it we ball
+    set(int, i, 7);
+    bump(i);
+
+    
+    serving set(int, i, 0) until i beta 10 by bump(i) yk
+        yap("%d\n", i);
+
+        sus i is 0 yk
+            yap("First iteration\n");
+        or maybe i is 1 yk
+            yap("Second iteration\n");
+        otherwise
+            yap("Different case\n");
+        DEAD
+    DEAD
+DEAD

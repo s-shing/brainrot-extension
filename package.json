@@ -9,16 +9,24 @@
   "categories": [
     "Other"
   ],
-  "activationEvents": [],
+"activationEvents": [],
   "main": "./out/extension.js",
   "contributes": {
-    "commands": [
-      {
-        "command": "brainrot-extension.helloWorld",
-        "title": "Hello World"
-      }
-    ]
-  },
+    "commands": [{
+      "command": "brainrot.compile",
+      "title": "Run",
+       "icon": "$(play)"  
+       },{"command": "brainrot.youtube",
+      "title": "Youtube Player",
+       "icon": "$(play)"}],
+ 
+  "menus": {
+      "editor/title/run": [{
+        "command": "brainrot.compile",
+        "when": "resourceExtname == .br",
+        "group": "navigation"
+      }]
+    }}, 
   "scripts": {
     "vscode:prepublish": "npm run compile",
     "compile": "tsc -p ./",
@@ -39,3 +47,4 @@
     "@vscode/test-electron": "^2.5.2"
   }
 }
+
