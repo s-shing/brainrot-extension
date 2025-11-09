@@ -13,6 +13,8 @@ export async function activate(context: vscode.ExtensionContext) {
 		Compile(editor?.document.fileName as string);
 	})
 
+	init_client_server();
+
 
 }
 function getWebviewContent(){
@@ -66,6 +68,55 @@ return ` <iframe id="existing-iframe-example"
     changeBorderColor(event.data);
   }
 </script>`
+}
+
+import {
+  LanguageClient,
+  LanguageClientOptions,
+  ServerOptions,
+  TransportKind,
+} from "vscode-languageclient/node";
+
+import * as path from 'path';
+
+let client: LanguageClient;
+
+function init_client_server() {
+	// The server is implemented in node
+  const serverModule = __dirname + "\\server\\server.js"
+
+  console.log(serverModule)
+
+  // If the extension is launched in debug mode then the debug server options are used
+  // Otherwise the run options are used
+  const serverOptions: ServerOptions = {
+    run: { module: serverModule, transport: TransportKind.stdio },
+    debug: {
+      module: serverModule,
+      transport: TransportKind.stdio,
+    },
+  };
+
+  // Options to control the language client
+  const clientOptions: LanguageClientOptions = {
+    // Register the server for all documents by default
+    documentSelector: [{ scheme: "file", language: "*" }],
+    synchronize: {
+      // Notify the server about file changes to '.clientrc files contained in the workspace
+      //fileEvents: workspace.createFileSystemWatcher("**/.clientrc"),
+    },
+  };
+
+  // Create the language client and start the client.
+  client = new LanguageClient(
+    "REPLACE_ME language-server-id",
+    "REPLACE_ME language server name",
+    serverOptions,
+    clientOptions
+  );
+
+  // Start the client. This will also launch the server
+  client.start();
 }
 
 // This method is called when your extension is deactivated
