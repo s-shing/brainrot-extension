@@ -1,0 +1,22 @@
+import subprocess
+import sys
+
+content = b""
+replacements = [(b"\xf0\x9f\x92\x80", b"DEAD"),
+                (b"\xf0\x9f\x98\xad", b"SOB"),
+                (b"\xf0\x9f\x92\x94", b"BROKEN"),
+                (b"\xf0\x9f\xa5\x80", b"WILT")]
+
+with open(sys.argv[1], "rb") as f:
+    content = f.read()
+    print(content)
+
+content = b'#include "brainrot.h"\r\n\r\n' + content
+for r in replacements:
+    content = content.replace(r[0], r[1])
+
+with open("output.c", "wb") as f:
+    f.write(content)
+
+subprocess.run(["gcc", "output.c", "-o", "test"])
+subprocess.run(["./test"])
