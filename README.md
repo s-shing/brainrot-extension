@@ -29,6 +29,6 @@ A special thanks to the creators of the following projects who helped provide in
 - https://github.com/semanticart/lsp-from-scratch
 - https://github.com/microsoft/vscode-extension-samples/tree/main/lsp-sample
 - https://github.com/OpenEuphoria/vscode-euphoria
-
+- https://www.pygyat.org/
 
 **Enjoy!**
