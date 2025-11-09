@@ -13,8 +13,6 @@ export function init_client_server() {
 	// The server is implemented in node
   const serverModule = __dirname + "\\server.js"
 
-  console.log(serverModule)
-
   // If the extension is launched in debug mode then the debug server options are used
   // Otherwise the run options are used
   const serverOptions: ServerOptions = {

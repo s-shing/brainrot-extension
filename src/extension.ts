@@ -15,12 +15,12 @@ export async function activate(context: vscode.ExtensionContext) {
 		console.log(Compile(editor?.document.fileName as string));
 	})
 
-// 	let panel = vscode.window.createWebviewPanel('tiktok', 'Tiktok Brainrot', vscode.ViewColumn.Beside,{enableScripts: true}) 
-// for (const [key, value] of Object.entries(vidDict)) {	
-// 	 panel.webview.html = getWebviewContent(key,value);
-// 	await delay(15000);
+	let panel = vscode.window.createWebviewPanel('tiktok', 'Tiktok Brainrot', vscode.ViewColumn.Beside,{enableScripts: true}) 
+for (const [key, value] of Object.entries(vidDict)) {	
+	 panel.webview.html = getWebviewContent(key,value);
+	await delay(15000);
 
-// };
+};
 
 	init_client_server();
 
@@ -30,15 +30,8 @@ function delay(ms: number) {
     return new Promise( resolve => setTimeout(resolve, ms) );
 }
 function getWebviewContent(username:string, vidId:string){
-	return `<blockquote 
-				class="tiktok-embed" 
-				cite="https://www.tiktok.com/@${username}/video/${vidId}"
-				data-video-id="${vidId}" 
-				style="max-width: 320px; max-height:600px;" 
-			>
-				<section></section>
-			</blockquote>
-			<script async src="https://www.tiktok.com/embed.js"></script>`
+	return `<iframe height="400" width= "220" src="https://www.tiktok.com/player/v1/${vidId}?&music_info=1&description=1&autoplay=1"  title="test"></iframe>`
+	
 			
 }
 
