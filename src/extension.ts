@@ -8,9 +8,16 @@ let vidDict = {"oversensory":"7568990861531385143", "peachyslime":"7570402732197
 export async function activate(context: vscode.ExtensionContext) {
 
 	console.log('Congratulations, your extension "brainrot-extension" is now active!');
+<<<<<<< HEAD
 
 
 	init_client_server();
+=======
+	// vscode.commands.registerCommand('brainrot.tiktok', () => {
+		
+	// })
+	init_client_server(context);
+>>>>>>> 9587bb3002a945a2d5e67c3c6e14ef1c0c0175ef
 
 	let runCommand = vscode.commands.registerCommand('brainrot.compile', () => {
 		const editor = vscode.window.activeTextEditor;
@@ -31,6 +38,7 @@ async function tiktokPopout(){
 		await delay(15000);
 	}}
 }
+
 
 function delay(ms: number) {
     return new Promise( resolve => setTimeout(resolve, ms) );

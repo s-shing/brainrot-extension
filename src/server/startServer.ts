@@ -5,11 +5,11 @@ import {
   TransportKind,
 } from "vscode-languageclient/node";
 
-import { workspace, ExtensionContext } from 'vscode';
+import * as vscode from 'vscode';
 
 let client: LanguageClient;
 
-export function init_client_server() {
+export function init_client_server(context: vscode.ExtensionContext) {
 	// The server is implemented in node
   const serverModule = __dirname + "\\server.js"
 
@@ -29,7 +29,7 @@ export function init_client_server() {
     documentSelector: [{ scheme: "file", language: "*" }],
     synchronize: {
       // Notify the server about file changes to '.clientrc files contained in the workspace
-      fileEvents: workspace.createFileSystemWatcher("**/.br"),
+      fileEvents: vscode.workspace.createFileSystemWatcher("**/.br"),
     },
   };
 
