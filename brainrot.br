@@ -1,17 +1,38 @@
-fuck it we ball
-    set(int, i, 7);
-    bump(i);
+rizz(
+    void, 
+    print_test, 
+    (
+        int x, 
+        int y
+    ), 
+    {
+        yap("test print\n");
+        yap_int(x);
+        yap_int(y);
+    }
+)
 
-    
-    serving set(int, i, 0) until i beta 10 by bump(i) yk
-        yap("%d\n", i);
 
-        sus i is 0 yk
-            yap("First iteration\n");
-        or maybe i is 1 yk
-            yap("Second iteration\n");
-        otherwise
-            yap("Different case\n");
-        💀
-    💀
-💀
+fuckItWeBall(
+lore(int, i, 7); glaze ignore this
+six_seven(i, 1);
+six_seven(i, 1);
+yap_int(i);
+sus(
+    sigma(i, 8), 
+    yap("we're 8\n");, 
+    sus(
+        sigma(i, 9), 
+        yap("we're 9\n");, 
+        💀)
+);
+
+serving(
+    💀, 
+    beta(i, 15), 
+    six_seven(i, 1),
+    yap("meow\n");
+);
+
+print_test(i, i+1);
+);
